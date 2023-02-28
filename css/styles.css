@@ -57,7 +57,7 @@ button {
 
 /* Полоска для хедера */
 
-header {
+.header {
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -74,6 +74,12 @@ header {
 .header-container {
     align-items: center;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
 }
 
 .main-nav {
@@ -625,7 +631,7 @@ a {
 /* Стилі для головної кнопки сторінки */
 .main-button {
     background: var(--accent-text-color);
-    border: 1px solid #000000;
+    border: 1px solid var(--accent-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     cursor: pointer;
