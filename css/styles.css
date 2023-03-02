@@ -16,8 +16,6 @@
     --modal-color: #FCFCFC;
     }
 
-
-
 *,
 *::before,
 *::after {
@@ -88,8 +86,8 @@ button {
 }
 
 .logo {
-    padding-top: 21px;
-    padding-bottom: 21px;
+    padding-top: 21.5px;
+    padding-bottom: 21.5px;
     margin-right: 76px;
 }
 
@@ -98,6 +96,10 @@ button {
     flex-direction: row;
     padding: 0px;
     gap: 40px;
+}
+
+.nav-item {
+    height: 24px;
 }
 
 .nav {
@@ -114,7 +116,7 @@ button {
     background-color: var(--btn-hov-foc-backcolor);
     border-radius: 2px;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     
 }
 
@@ -175,7 +177,7 @@ button {
     background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url(../images/group-people-working-website-template.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 1440px;
     background-position: center;    
 }
 
@@ -263,7 +265,9 @@ button {
     height: 100%;
     background-color: var(--accent-text-color);
     border-radius: 50%;
-    
+    transition-property: background-color;
+    transition-duration: 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-socmedia-ancer:hover,
@@ -347,6 +351,9 @@ button {
     border: 1px solid var(--costumers-color);
     color: var(--costumers-color);
     border-radius: 4px;
+    transition-property: border, color;
+    transition-duration: 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-cover:hover,
@@ -381,6 +388,9 @@ button {
     align-items: center;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);;
+    transition-property: background-color; 
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socmedia-footer-link:hover,
@@ -462,7 +472,8 @@ button {
     top: 0;
     left: 0;
     transform: translateY(100%);
-    transition: transform 500ms;
+    transition: transform 500ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card:hover .card-discription,
@@ -488,29 +499,16 @@ button {
 .project-card {
     box-sizing: border-box;
     background: var(--basic-backcolor);
+    transition-property: box-shadow;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Стилі карточок проектів при hover,focus */
 .project-card:hover,
 .project-card:focus {
-    box-sizing: border-box;
-    background: var(--basic-backcolor);
-    animation-name: changeShadow;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-@keyframes changeShadow {
-    0% {
-        box-shadow: none;
-    }
-  
-    100% {
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-  }
 
 .project-list {
     display: flex;
@@ -578,15 +576,12 @@ a {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Стилі при hover,focus для посилань в навігації */
 .nav:hover,
 .nav:focus {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
     color: var(--btn-hov-foc-backcolor);
 }
 
@@ -605,18 +600,13 @@ a {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--title-text-color);
+    transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Стилі при hover,focus для контактів */
 .mail-link:hover,
 .phone-link:hover,
 .mail-link:focus,
 .phone-link:focus {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
     color: var(--btn-hov-foc-backcolor);
 }
 
@@ -630,17 +620,18 @@ a {
 }
 /* Стилі для головної кнопки сторінки */
 .main-button {
-    background: var(--accent-text-color);
+    background-color: var(--accent-text-color);
     border: 1px solid var(--accent-text-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 500ms cubic-bezier(0.4, 0, 0.2, 1), border 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Стилі при hover,focus для головної кнопки */
 .main-button:hover,
 .main-button:focus {
-    background: var(--btn-hov-foc-backcolor);
+    background-color: var(--btn-hov-foc-backcolor);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: var(--btn-hov-foc-backcolor);
@@ -708,7 +699,7 @@ a {
 
 /* Стилі кнопок */
 button {
-    background: var(--secondary-backcolor);
+    background-color: var(--secondary-backcolor);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     cursor: pointer;
@@ -716,53 +707,29 @@ button {
 /* Стилі тексту кнопок */
 .filter-button {
     padding: 12px 24px;
-
     border: 1px solid var(--border-color);
+    color: var(--accent-text-color);
     border-radius: 4px;
-
-
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    color: var(--accent-text-color);
     font-family: Roboto;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), border 500ms cubic-bezier(0.4, 0, 0.2, 1), color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Стилі при hover,focus для кнопок */
 .filter-button:hover,
 .filter-button:focus {
-    animation-name: changeColor;
-    animation-duration: 500ms;
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    animation-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
-    animation-fill-mode: forwards;
+    background-color: var(--btn-hov-foc-backcolor);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--btn-hov-foc-backcolor);
+    color: var(--hero-image-text);
 }
-
-@keyframes changeColor {
-    0% {
-        color: var(--accent-text-color);
-        border: 1px solid var(--border-color);
-    }
-  
-    100% {
-        background: var(--btn-hov-foc-backcolor);
-        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-        border: 1px solid var(--btn-hov-foc-backcolor);
-        color: var(--hero-image-text);
-    }
-  }
 
     
 /* Стилі зоголовків h2 в списку робіт */
 .titles-of-works {
     margin-bottom: 8px;
-
-
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
@@ -775,6 +742,8 @@ button {
 .close {
     width: 8px;
     height: 8px;
+    fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop {
@@ -826,4 +795,16 @@ button {
     border-radius: 50%;
     background-color: var(--border-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    background-color: var(--btn-hov-foc-backcolor);
+    border: 1px solid var(--btn-hov-foc-backcolor);
+}
+
+.modal-close:hover > .close,
+.modal-close:focus > .close {
+    fill: var(--basic-backcolor);
 }
